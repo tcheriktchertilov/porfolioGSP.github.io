@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Студента</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffccff;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .portfolio-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.2s; / Плавный переход при увеличении /
+        }
+        img:hover {
+            transform: scale(1.2); / Увеличение при наведении /
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 100px; / Ширина фотографии /
+            height: 100px; / Высота фотографии /
+            margin-right: 20px; / Отступ справа от фотографии /
+        }
+        .description {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); / Три сертификата в ряд /
+            gap: 10px; / Отступы между сертификатами /
+        }
+        .certificates img {
+            width: 100%; / Ширина сертификата /
+            height: auto; / Автоматическая высота /
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Портфолио Студента</h1>
+    </header>
+    <div class="container">
+        <div class="profile">
+            <img src="profile.jpg" alt="Фотография студента"> <!-- Замените на своё изображение -->
+            <h2>ФИО: Гришанова София Павловна</h2>
+        </div>
+        <p>Группа: 324</p>
+        <p>Специальность: Администратор баз данных </p>
+        <p>Курс: Второй </p>
+
+        <div class="description">
+            <h3>Описание</h3>
+            <p>Студент ГПОАУ АО АПК. Поступила на айти, чтобы в будущем иметь базу под создание игр. Дополнительно изучаю Графический дизайн для своего развития в художественной сфере и работе с 3D моделями. Учусь писать сайты на HTML и делать базы данных в Access. А еще я делаю косплеи ;)</p>
+        </div>
+
+        <div class="portfolio-item">
+            <h3>Сертификаты</h3>
+            <div class="certificates">
+                <img src="sertificat1.jpg" alt="Сертификат 1">
+                <img src="sertificat2.jpg" alt="Сертификат 2">
+                <img src="sertificat3.jpg" alt="Сертификат 3">
+                <img src="sertificat4.jpg" alt="Сертификат 4">
+                <img src="sertificat5.jpg" alt="Сертификат 5">
+                <img src="sertificat6.jpg" alt="Сертификат 6">
+                <img src="sertificat7.jpg" alt="Сертификат 7">
+
+            </div>
+        </div>
+    </div>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои работы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .work {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s; / Плавный переход /
+        }
+        .work img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .work:hover {
+            transform: scale(1.2); / Увеличение при наведении /
+        }
+    </style>
+</head>
+<body>
+    <h1>Мои работы</h1>
+    <div class="portfolio">
+        <div class="work">
+            <img src="work1.jpg" alt="Работа 1">
+            <h2></h2>
+            <p>Косплей на Виктора из сериала "Аркейн" </p>
+        </div>
+        <div class="work">
+            <img src="work2.jpg" alt="Работа 2">
+            <h2></h2>
+            <p>Косплей на Данте из игры "Devil May Cry 3"</p>
+        </div>
+        <div class="work">
+            <img src="work3.jpg" alt="Работа 3">
+            <h2></h2>
+            <p>Косплей на ISO из игры "Valorant"</p>
+        </div>
+        <div class="work">
+            <img src="work4.jpg" alt="Работа 4">
+            <h2></h2>
+            <p>Рисунок Вергилия из серии игр "Devil May Cry"</p>
+        </div>
+        <div class="work">
+            <img src="work5.jpg" alt="Работа 5">
+            <h2></h2>
+            <p>Арт с Данте и Верлигием из серии игр "Devil May Cry"</p>
+        </div>
+        <div class="work">
+            <img src="work6.jpg" alt="Работа 6">
+            <h2></h2>
+            <p>Арт, нарисованные для подруги в честь нового года с артистом Русланом Тущенцовым (CMH)</p>
+            </style>
+</head>
+<body>
+
+           </div>
+</div>
+<a href="http://cherikkk.tilda.ws" target="_blank">
+    <button style="font-size: 20px; padding: 15px 30px;">Перейти на сайт прошлого портфолио</button>
+</a>
+        </div>
+    </div>
+</body>
+</html>
