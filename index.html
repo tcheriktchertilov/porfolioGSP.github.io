@@ -4,9 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио Студента</title>
-    <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #ffccff; } header { background: #333; color: #fff; padding: 10px 0; text-align: center; } .container { width: 80%; margin: auto; overflow: hidden; padding: 20px; } .portfolio-item { margin: 20px 0; padding: 20px; background: #fff; border: 1px solid #ccc; } img { max-width: 100%; height: auto; transition: transform 0.2s; /* Плавный переход при увеличении */ } img:hover { transform: scale(1.2); /* Увеличение при наведении */ } .profile { display: flex; align-items: center; } .profile img { border-radius: 50%; width: 100px; /* Ширина фотографии */ height: 100px; /* Высота фотографии */ margin-right: 20px; /* Отступ справа от фотографии */ } .description { margin-top: 20px; padding: 10px; background: #fff; border: 1px solid #ccc; } .certificates { display: grid; grid-template-columns: repeat(3, 1fr); /* Три сертификата в ряд */ gap: 10px; /* Отступы между сертификатами */ } .certificates img { width: 100%; /* Ширина сертификата */ height: auto; /* Автоматическая высота */ } </style>
+    <style>
+        * {
+            box-sizing: border-box; /* Чтобы размеры учитывали padding и border */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaf2fd; /* Голубой цвет фона */
+        }
+
+        header {
+            background: linear-gradient(to right, #007bff, #17a2b8); /* Синяя и голубая градиенты */
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('banner-bg.jpg'); /* Ваша картинка для фона баннера */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.25;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 36px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-bar {
+            background-color: rgba(23, 162, 184, 0.75); /* Прозрачный голубой цвет */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .nav-bar a:first-child {
+            margin-left: 0;
+        }
+
+        .nav-bar i {
+            margin-right: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95); /* Белый полупрозрачный фон контейнера */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 150px; /* Увеличила размер фото */
+            height: 150px;
+            object-fit: cover;
+            margin-right: 30px;
+        }
+
+        .profile h2 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            margin-top: 40px;
+            padding: 20px;
+            background: transparent;
+            border: none;
+            font-style: italic;
+        }
+
+        .description h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item {
+            margin: 40px 0;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .portfolio-item h3 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.2s;
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Гибкая сетка */
+            gap: 20px;
+        }
+
+        button {
+            display: block;
+            margin: 40px auto 0;
+            padding: 15px 30px;
+            font-size: 20px;
+            background: linear-gradient(to right, #007bff, #17a2b8); /* Синяя и голубая градиенты */
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #17a2b8, #007bff); /* Обратный порядок цветов */
+            transform: scale(1.05);
+        }
+
+        /* Стиль для кнопки прокрутки наверх */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(to right, #007bff, #17a2b8);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
 </head>
 <body>
+    <div class="nav-bar">
+         <a href="https://t.me/chcherik"><i class="fa-solid fa-envelope"></i> ТГ канал</a>
+        <a href="https://vk.com/cherishh.cherry" target="_blank"><i class="fa-brands fa-vk"></i> ВКонтакте</a>
+    </div>
     <header>
         <h1>Портфолио Студента</h1>
     </header>
@@ -39,7 +226,24 @@
     </div>
     
     <a href="http://cherikkk.tilda.ws" target="_blank">
-        <button style="font-size: 20px; padding: 15px 30px;">Перейти на сайт прошлого портфолио</button>
+        <button>Перейти на сайт прошлого портфолио</button>
     </a>
+
+    <!-- Кнопка для прокрутки наверх -->
+    <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Наверх</button>
+
+<script>
+// Функция для отслеживания прокрутки и показа/скрытия кнопки
+document.addEventListener('scroll', function () {
+    var scrollButton = document.querySelector('.scroll-to-top');
+    if (window.pageYOffset > window.innerHeight / 2) {
+        scrollButton.classList.add('show');
+    } else {
+        scrollButton.classList.remove('show');
+    }
+});
+</script>
+
+<script src="https://kit.fontawesome.com/ee1b43abfe.js" crossorigin="anonymous"></script>
 </body>
 </html>
